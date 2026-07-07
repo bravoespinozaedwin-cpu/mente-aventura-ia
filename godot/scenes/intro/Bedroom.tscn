@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://drngv84baocx8"]
+
+[ext_resource type="Script" uid="uid://bgxvxqc1wwkh7" path="res://scripts/intro/Bedroom.gd" id="1_o7dj6"]
+[ext_resource type="PackedScene" uid="uid://b3ufx0kyn5h5t" path="res://scenes/player/player.tscn" id="2_w5rxp"]
+
+[node name="Bedroom" type="Node2D" unique_id=978412157]
+script = ExtResource("1_o7dj6")
+
+[node name="Background" type="Node2D" parent="." unique_id=463928238]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=588892421]
+
+[node name="Room" type="Node2D" parent="Background" unique_id=1346686295]
+
+[node name="Funiture" type="Node2D" parent="." unique_id=1221456292]
+
+[node name="Bed" type="Node2D" parent="Funiture" unique_id=609544574]
+
+[node name="Desk" type="Node2D" parent="Funiture" unique_id=298921770]
+
+[node name="Window" type="Node2D" parent="Funiture" unique_id=363562131]
+
+[node name="Door" type="Node2D" parent="Funiture" unique_id=505350964]
+
+[node name="Props" type="Node2D" parent="." unique_id=198802594]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1864427387]
+position = Vector2(540, 320)
+
+[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1084585393]
+position = Vector2(540, 420)
+
+[node name="NovaSpawn" type="Marker2D" parent="." unique_id=1400024251]
+position = Vector2(650, 380)
+
+[node name="player" parent="." unique_id=48457569 instance=ExtResource("2_w5rxp")]
+position = Vector2(540, 420)
