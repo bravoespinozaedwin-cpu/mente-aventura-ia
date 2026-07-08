@@ -4,8 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://b43c6mhre6b5t" path="res://icon.svg" id="2_umplw"]
 [ext_resource type="PackedScene" uid="uid://b3ufx0kyn5h5t" path="res://scenes/player/player.tscn" id="2_w5rxp"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5rxp"]
+size = Vector2(129.5, 131.5)
+
 [node name="Bedroom" type="Node2D" unique_id=978412157]
 script = ExtResource("1_o7dj6")
+metadata/_edit_vertical_guides_ = [-1213.0]
 
 [node name="Background" type="Node2D" parent="." unique_id=463928238]
 
@@ -16,9 +20,16 @@ script = ExtResource("1_o7dj6")
 [node name="Funiture" type="Node2D" parent="." unique_id=1221456292]
 
 [node name="Bed" type="Node2D" parent="Funiture" unique_id=609544574]
+position = Vector2(465, 420)
 
 [node name="Sprite2D" type="Sprite2D" parent="Funiture/Bed" unique_id=155964905]
 texture = ExtResource("2_umplw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Funiture/Bed" unique_id=1748776382]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Funiture/Bed/StaticBody2D" unique_id=749928957]
+position = Vector2(0.25, -1.75)
+shape = SubResource("RectangleShape2D_w5rxp")
 
 [node name="Desk" type="Node2D" parent="Funiture" unique_id=298921770]
 
@@ -29,14 +40,14 @@ texture = ExtResource("2_umplw")
 [node name="Props" type="Node2D" parent="." unique_id=198802594]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1864427387]
-position = Vector2(540, 320)
+position = Vector2(574, 328)
 
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1084585393]
-position = Vector2(540, 420)
+position = Vector2(600, 425)
 
 [node name="NovaSpawn" type="Marker2D" parent="." unique_id=1400024251]
 position = Vector2(650, 380)
 
 [node name="Player" parent="." unique_id=48457569 instance=ExtResource("2_w5rxp")]
-visible = false
-position = Vector2(540, 420)
+z_index = 10
+position = Vector2(600, 425)
