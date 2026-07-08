@@ -27,8 +27,7 @@ func _physics_process(_delta):
 
 	if Input.is_action_just_pressed("interact"):
 		if current_interactable:
-			var bedroom = get_tree().current_scene
-			bedroom.show_dialogue("Este libro parece muy antiguo...")
+			DialogueManager.show_dialogue("Este libro parece muy antiguo...")
 
 func _on_interaction_area_area_entered(area: Area2D) -> void:
 	current_interactable = area
