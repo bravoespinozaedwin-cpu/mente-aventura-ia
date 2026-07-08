@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 DialogueManager="*uid://bo3lcqx3dajyg"
+SceneManager="*uid://byu2gst7fm1ex"
 
 [input]
 

@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://drngv84baocx8"]
 
 [ext_resource type="Script" uid="uid://bgxvxqc1wwkh7" path="res://scripts/intro/Bedroom.gd" id="1_o7dj6"]
-[ext_resource type="Texture2D" uid="uid://b43c6mhre6b5t" path="res://icon.svg" id="2_umplw"]
 [ext_resource type="PackedScene" uid="uid://b3ufx0kyn5h5t" path="res://scenes/player/player.tscn" id="2_w5rxp"]
 [ext_resource type="Script" uid="uid://byv2t6w2bv1g7" path="res://scripts/interactables/Book.gd" id="4_umplw"]
 [ext_resource type="PackedScene" uid="uid://dj3eujiwn3jmx" path="res://scripts/nova/Nova.tscn" id="5_4c5ob"]
@@ -9,26 +8,23 @@
 [ext_resource type="PackedScene" uid="uid://btad6qdj2l32f" path="res://scripts/systems/IntroController.tscn" id="7_8h68f"]
 [ext_resource type="Script" uid="uid://3fqab58vytfp" path="res://scripts/systems/IntroController.gd" id="8_qwl3c"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qwl3c"]
-size = Vector2(115, 133)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_umplw"]
-size = Vector2(144, 103)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8h68f"]
+load_path = "res://.godot/imported/BG_Bedroom.png-a8ca333528b0b02cb6d28c68af67c72b.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w5rxp"]
 radius = 38.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w5rxp"]
-size = Vector2(830, 10)
+size = Vector2(1075, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4c5ob"]
-size = Vector2(830, 10)
+size = Vector2(1139, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mqd0h"]
-size = Vector2(10, 470)
+size = Vector2(32, 267)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8h68f"]
-size = Vector2(10, 470)
+size = Vector2(30, 282)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_44ldr"]
 size = Vector2(23, 42)
@@ -43,30 +39,12 @@ metadata/_edit_vertical_guides_ = [-1213.0]
 
 [node name="Room" type="Node2D" parent="Background" unique_id=1346686295]
 
+[node name="Bedroom" type="Sprite2D" parent="Background" unique_id=308451816]
+position = Vector2(689, 335)
+scale = Vector2(0.45, 0.45)
+texture = SubResource("CompressedTexture2D_8h68f")
+
 [node name="Funiture" type="Node2D" parent="." unique_id=1221456292]
-
-[node name="Bed" type="Node2D" parent="Funiture" unique_id=609544574]
-position = Vector2(442, 333)
-
-[node name="Sprite2D" type="Sprite2D" parent="Funiture/Bed" unique_id=155964905]
-texture = ExtResource("2_umplw")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Funiture/Bed/Sprite2D" unique_id=920055930]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Funiture/Bed/Sprite2D/StaticBody2D" unique_id=272762977]
-position = Vector2(-2.5, -9.5)
-shape = SubResource("RectangleShape2D_qwl3c")
-
-[node name="Desk" type="Node2D" parent="Funiture" unique_id=298921770]
-position = Vector2(34, -64)
-
-[node name="Sprite2D" type="Sprite2D" parent="Funiture/Desk" unique_id=207941873]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Funiture/Desk" unique_id=1876353080]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Funiture/Desk/StaticBody2D" unique_id=739247709]
-position = Vector2(670, 266)
-shape = SubResource("RectangleShape2D_umplw")
 
 [node name="Window" type="Node2D" parent="Funiture" unique_id=363562131]
 
@@ -84,7 +62,7 @@ position = Vector2(650, 380)
 
 [node name="Player" parent="." unique_id=48457569 instance=ExtResource("2_w5rxp")]
 z_index = 10
-position = Vector2(537, 336)
+position = Vector2(547, 330)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1864427387]
 position = Vector2(73, -9)
@@ -100,25 +78,25 @@ shape = SubResource("CircleShape2D_w5rxp")
 [node name="TopWall" type="StaticBody2D" parent="WorldCollision" unique_id=1503287538]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/TopWall" unique_id=1322201024]
-position = Vector2(535, 69)
+position = Vector2(718.5, 184)
 shape = SubResource("RectangleShape2D_w5rxp")
 
 [node name="BottomWall" type="StaticBody2D" parent="WorldCollision" unique_id=1377468]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/BottomWall" unique_id=1382496977]
-position = Vector2(534, 535)
+position = Vector2(711.5, 448)
 shape = SubResource("RectangleShape2D_4c5ob")
 
 [node name="LeftWall" type="StaticBody2D" parent="WorldCollision" unique_id=1530754154]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/LeftWall" unique_id=1720600356]
-position = Vector2(123, 295)
+position = Vector2(156, 307.5)
 shape = SubResource("RectangleShape2D_mqd0h")
 
 [node name="RightWall" type="StaticBody2D" parent="WorldCollision" unique_id=1273913005]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/RightWall" unique_id=78719704]
-position = Vector2(950, 293)
+position = Vector2(1284, 315)
 shape = SubResource("RectangleShape2D_8h68f")
 
 [node name="Interactables" type="Node2D" parent="." unique_id=2091293640]
