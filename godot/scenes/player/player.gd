@@ -26,8 +26,10 @@ func _physics_process(_delta):
 	move_and_slide()
 
 	if Input.is_action_just_pressed("interact"):
-		if current_interactable:
-			DialogueManager.show_dialogue("Este libro parece muy antiguo...")
+		if DialogueManager.is_dialogue_active:
+			DialogueManager.hide_dialogue()
+		elif current_interactable and current_interactable.has_method("interact"):
+			current_interactable.interact()
 
 func _on_interaction_area_area_entered(area: Area2D) -> void:
 	current_interactable = area

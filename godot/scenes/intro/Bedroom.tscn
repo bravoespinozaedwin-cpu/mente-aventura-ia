@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bgxvxqc1wwkh7" path="res://scripts/intro/Bedroom.gd" id="1_o7dj6"]
 [ext_resource type="Texture2D" uid="uid://b43c6mhre6b5t" path="res://icon.svg" id="2_umplw"]
 [ext_resource type="PackedScene" uid="uid://b3ufx0kyn5h5t" path="res://scenes/player/player.tscn" id="2_w5rxp"]
+[ext_resource type="Script" uid="uid://byv2t6w2bv1g7" path="res://scripts/interactables/Book.gd" id="4_umplw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qwl3c"]
 size = Vector2(115, 133)
@@ -119,6 +120,7 @@ shape = SubResource("RectangleShape2D_8h68f")
 [node name="Interactables" type="Node2D" parent="." unique_id=2091293640]
 
 [node name="Book" type="Area2D" parent="Interactables" unique_id=872651651]
+script = ExtResource("4_umplw")
 
 [node name="Sprite2D" type="Sprite2D" parent="Interactables/Book" unique_id=574813739]
 
