@@ -4,11 +4,16 @@ extends CharacterBody2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var current_interactable: Area2D = null
+var can_move := true
 
 func _ready():
 	animated_sprite.play("idle")
 
 func _physics_process(_delta):
+	if !can_move:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
 	var direction := Vector2.ZERO
 	direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	direction.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
@@ -30,7 +35,7 @@ func _physics_process(_delta):
 			DialogueManager.hide_dialogue()
 		elif current_interactable and current_interactable.has_method("interact"):
 			current_interactable.interact()
-
+	
 func _on_interaction_area_area_entered(area: Area2D) -> void:
 	current_interactable = area
 

@@ -1,3 +1,14 @@
 [gd_scene format=3 uid="uid://bi1boyj73pc1c"]
 
+[ext_resource type="Script" uid="uid://cw20uwhj8mrjh" path="res://scripts/systems/Main.gd" id="1_glv2v"]
+
 [node name="Main_tscn" type="Node2D" unique_id=1957908573]
+script = ExtResource("1_glv2v")
+
+[node name="CurrentScene" type="Node2D" parent="." unique_id=94231109]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1192793563]
+
+[node name="FadeLayer" type="CanvasLayer" parent="." unique_id=264589271]
+
+[node name="Managers" type="Node" parent="." unique_id=1900505922]
