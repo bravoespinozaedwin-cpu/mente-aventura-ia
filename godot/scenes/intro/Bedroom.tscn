@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://b43c6mhre6b5t" path="res://icon.svg" id="2_umplw"]
 [ext_resource type="PackedScene" uid="uid://b3ufx0kyn5h5t" path="res://scenes/player/player.tscn" id="2_w5rxp"]
 [ext_resource type="Script" uid="uid://byv2t6w2bv1g7" path="res://scripts/interactables/Book.gd" id="4_umplw"]
+[ext_resource type="PackedScene" uid="uid://dj3eujiwn3jmx" path="res://scripts/nova/Nova.tscn" id="5_4c5ob"]
+[ext_resource type="Script" uid="uid://cm6un55aq2bv" path="res://scripts/nova/Nova.gd" id="6_mqd0h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qwl3c"]
 size = Vector2(115, 133)
@@ -136,6 +138,10 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "texto de prueba
 "
+
+[node name="Nova" parent="." unique_id=1749388893 instance=ExtResource("5_4c5ob")]
+position = Vector2(714, 350)
+script = ExtResource("6_mqd0h")
 
 [connection signal="area_entered" from="Player/InteractionArea" to="Player" method="_on_interaction_area_area_entered"]
 [connection signal="area_exited" from="Player/InteractionArea" to="Player" method="_on_interaction_area_area_exited"]
