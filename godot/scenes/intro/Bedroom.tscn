@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://drngv84baocx8"]
 
 [ext_resource type="Script" uid="uid://bgxvxqc1wwkh7" path="res://scripts/intro/Bedroom.gd" id="1_o7dj6"]
+[ext_resource type="Texture2D" uid="uid://b43c6mhre6b5t" path="res://icon.svg" id="2_umplw"]
 [ext_resource type="PackedScene" uid="uid://b3ufx0kyn5h5t" path="res://scenes/player/player.tscn" id="2_w5rxp"]
 
 [node name="Bedroom" type="Node2D" unique_id=978412157]
@@ -15,6 +16,9 @@ script = ExtResource("1_o7dj6")
 [node name="Funiture" type="Node2D" parent="." unique_id=1221456292]
 
 [node name="Bed" type="Node2D" parent="Funiture" unique_id=609544574]
+
+[node name="Sprite2D" type="Sprite2D" parent="Funiture/Bed" unique_id=155964905]
+texture = ExtResource("2_umplw")
 
 [node name="Desk" type="Node2D" parent="Funiture" unique_id=298921770]
 
@@ -33,5 +37,6 @@ position = Vector2(540, 420)
 [node name="NovaSpawn" type="Marker2D" parent="." unique_id=1400024251]
 position = Vector2(650, 380)
 
-[node name="player" parent="." unique_id=48457569 instance=ExtResource("2_w5rxp")]
+[node name="Player" parent="." unique_id=48457569 instance=ExtResource("2_w5rxp")]
+visible = false
 position = Vector2(540, 420)
