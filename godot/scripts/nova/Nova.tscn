@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://dj3eujiwn3jmx"]
 
+[ext_resource type="Script" uid="uid://cm6un55aq2bv" path="res://scripts/nova/Nova.gd" id="1_h2ifd"]
 [ext_resource type="Texture2D" uid="uid://b43c6mhre6b5t" path="res://icon.svg" id="1_yer24"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_h2ifd"]
+
 [node name="Nova" type="CharacterBody2D" unique_id=179132203]
+script = ExtResource("1_h2ifd")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=640334888]
 scale = Vector2(0.25, 0.25)
@@ -17,3 +21,4 @@ texture = ExtResource("1_yer24")
 [node name="Area2D" type="Area2D" parent="." unique_id=1187393898]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=615311482]
+shape = SubResource("CircleShape2D_h2ifd")

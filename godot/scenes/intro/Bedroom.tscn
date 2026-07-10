@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://drngv84baocx8"]
 
 [ext_resource type="Script" uid="uid://bgxvxqc1wwkh7" path="res://scripts/intro/Bedroom.gd" id="1_o7dj6"]
+[ext_resource type="Texture2D" uid="uid://dhfre7d6kn11c" path="res://assets/Bedroom/OBJ_Door.png" id="2_qwl3c"]
 [ext_resource type="PackedScene" uid="uid://b3ufx0kyn5h5t" path="res://scenes/player/player.tscn" id="2_w5rxp"]
+[ext_resource type="Script" uid="uid://dl56c1rbdxmdj" path="res://scripts/interactables/Door.gd" id="4_44ldr"]
 [ext_resource type="Script" uid="uid://byv2t6w2bv1g7" path="res://scripts/interactables/Book.gd" id="4_umplw"]
 [ext_resource type="PackedScene" uid="uid://dj3eujiwn3jmx" path="res://scripts/nova/Nova.tscn" id="5_4c5ob"]
-[ext_resource type="Script" uid="uid://cm6un55aq2bv" path="res://scripts/nova/Nova.gd" id="6_mqd0h"]
 [ext_resource type="PackedScene" uid="uid://btad6qdj2l32f" path="res://scripts/systems/IntroController.tscn" id="7_8h68f"]
 [ext_resource type="Script" uid="uid://3fqab58vytfp" path="res://scripts/systems/IntroController.gd" id="8_qwl3c"]
 
@@ -15,10 +16,10 @@ load_path = "res://.godot/imported/BG_Bedroom.png-a8ca333528b0b02cb6d28c68af67c7
 radius = 38.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w5rxp"]
-size = Vector2(1075, 26)
+size = Vector2(730.5, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4c5ob"]
-size = Vector2(1139, 22)
+size = Vector2(747, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mqd0h"]
 size = Vector2(32, 267)
@@ -26,8 +27,26 @@ size = Vector2(32, 267)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8h68f"]
 size = Vector2(30, 282)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8h68f"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qwl3c"]
+radius = 54.0
+height = 186.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_44ldr"]
+radius = 75.059975
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cpq6e"]
+size = Vector2(209, 99.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_chegt"]
+size = Vector2(97, 140)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_44ldr"]
-size = Vector2(23, 42)
+size = Vector2(75.5, 42.875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qwl3c"]
+size = Vector2(91, 125)
 
 [node name="Bedroom" type="Node2D" unique_id=978412157]
 script = ExtResource("1_o7dj6")
@@ -43,14 +62,6 @@ metadata/_edit_vertical_guides_ = [-1213.0]
 position = Vector2(689, 335)
 scale = Vector2(0.45, 0.45)
 texture = SubResource("CompressedTexture2D_8h68f")
-
-[node name="Funiture" type="Node2D" parent="." unique_id=1221456292]
-
-[node name="Window" type="Node2D" parent="Funiture" unique_id=363562131]
-
-[node name="Sprite2D" type="Sprite2D" parent="Funiture/Window" unique_id=1413855716]
-
-[node name="Door" type="Node2D" parent="Funiture" unique_id=505350964]
 
 [node name="Props" type="Node2D" parent="." unique_id=198802594]
 
@@ -76,39 +87,80 @@ shape = SubResource("CircleShape2D_w5rxp")
 [node name="WorldCollision" type="Node2D" parent="." unique_id=2044475128]
 
 [node name="TopWall" type="StaticBody2D" parent="WorldCollision" unique_id=1503287538]
+position = Vector2(-6, -3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/TopWall" unique_id=1322201024]
-position = Vector2(718.5, 184)
+position = Vector2(691.75, 256)
 shape = SubResource("RectangleShape2D_w5rxp")
 
 [node name="BottomWall" type="StaticBody2D" parent="WorldCollision" unique_id=1377468]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/BottomWall" unique_id=1382496977]
-position = Vector2(711.5, 448)
+position = Vector2(693, 504)
 shape = SubResource("RectangleShape2D_4c5ob")
 
 [node name="LeftWall" type="StaticBody2D" parent="WorldCollision" unique_id=1530754154]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/LeftWall" unique_id=1720600356]
-position = Vector2(156, 307.5)
+position = Vector2(339, 386)
 shape = SubResource("RectangleShape2D_mqd0h")
 
 [node name="RightWall" type="StaticBody2D" parent="WorldCollision" unique_id=1273913005]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/RightWall" unique_id=78719704]
-position = Vector2(1284, 315)
+position = Vector2(1035, 392)
 shape = SubResource("RectangleShape2D_8h68f")
 
+[node name="BedCollision" type="StaticBody2D" parent="WorldCollision" unique_id=1236468105]
+physics_material_override = SubResource("PhysicsMaterial_8h68f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/BedCollision" unique_id=1893877830]
+position = Vector2(421, 284)
+shape = SubResource("CapsuleShape2D_qwl3c")
+
+[node name="DeskCollision" type="StaticBody2D" parent="WorldCollision" unique_id=41069315]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/DeskCollision" unique_id=123184006]
+position = Vector2(943, 268)
+shape = SubResource("CircleShape2D_44ldr")
+
+[node name="ChestCollision" type="StaticBody2D" parent="WorldCollision" unique_id=1420868212]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/ChestCollision" unique_id=271623045]
+position = Vector2(470.5, 435.75)
+shape = SubResource("RectangleShape2D_cpq6e")
+
+[node name="Doorcoliision" type="StaticBody2D" parent="WorldCollision" unique_id=934316583]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/Doorcoliision" unique_id=3154233]
+position = Vector2(903.5, 450)
+shape = SubResource("RectangleShape2D_chegt")
+
 [node name="Interactables" type="Node2D" parent="." unique_id=2091293640]
+position = Vector2(-23, 59)
 
 [node name="Book" type="Area2D" parent="Interactables" unique_id=872651651]
+position = Vector2(422, 449)
 script = ExtResource("4_umplw")
 
 [node name="Sprite2D" type="Sprite2D" parent="Interactables/Book" unique_id=574813739]
+position = Vector2(764, 277)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Book" unique_id=1858277209]
-position = Vector2(761.5, 276)
+position = Vector2(35.75, -83.5625)
 shape = SubResource("RectangleShape2D_44ldr")
+
+[node name="Door" type="Area2D" parent="Interactables" unique_id=1174001930]
+script = ExtResource("4_44ldr")
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/Door" unique_id=733785133]
+position = Vector2(931, 416)
+scale = Vector2(0.7675446, 0.75396824)
+texture = ExtResource("2_qwl3c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Door" unique_id=1376568415]
+position = Vector2(927.5, 408.5)
+shape = SubResource("RectangleShape2D_qwl3c")
 
 [node name="DialogueUI" type="CanvasLayer" parent="." unique_id=288531219]
 
@@ -121,9 +173,9 @@ text = "texto de prueba
 
 [node name="Nova" parent="." unique_id=1749388893 instance=ExtResource("5_4c5ob")]
 position = Vector2(714, 350)
-script = ExtResource("6_mqd0h")
 
 [node name="IntroController" parent="." unique_id=580645350 instance=ExtResource("7_8h68f")]
+position = Vector2(429, 282)
 script = ExtResource("8_qwl3c")
 
 [connection signal="area_entered" from="Player/InteractionArea" to="Player" method="_on_interaction_area_area_entered"]
