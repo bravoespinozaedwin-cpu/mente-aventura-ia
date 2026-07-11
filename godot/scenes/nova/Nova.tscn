@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://6ydgrs36cm5l"]
 
 [ext_resource type="Texture2D" uid="uid://b43c6mhre6b5t" path="res://icon.svg" id="1_10j02"]
+[ext_resource type="Script" uid="uid://cm6un55aq2bv" path="res://scripts/nova/Nova.gd" id="1_ca5h1"]
 
-[node name="Nova" type="Node2D" unique_id=1681178056]
+[node name="Nova" type="CharacterBody2D" unique_id=433042350]
+script = ExtResource("1_ca5h1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1615176838]
+position = Vector2(412.00003, 140.00003)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_10j02")

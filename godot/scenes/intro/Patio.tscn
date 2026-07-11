@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://d32t20fpin1j"]
+
+[ext_resource type="Script" uid="uid://c8hd41gfsfujx" path="res://scenes/intro/Patio.gd" id="1_f86s0"]
+[ext_resource type="PackedScene" uid="uid://b3ufx0kyn5h5t" path="res://scenes/player/player.tscn" id="2_3n2ux"]
+[ext_resource type="PackedScene" uid="uid://6ydgrs36cm5l" path="res://scenes/nova/Nova.tscn" id="3_efkwo"]
+[ext_resource type="Script" uid="uid://b6gn0s0m0loy4" path="res://scripts/nova/NovaGuide.gd" id="4_un0rv"]
+
+[node name="Patio" type="Node2D" unique_id=1186116232]
+script = ExtResource("1_f86s0")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1375924063]
+
+[node name="WorldCollision" type="Node2D" parent="." unique_id=1208852144]
+
+[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=621531604]
+position = Vector2(189, 129)
+
+[node name="NovaSpawn" type="Marker2D" parent="." unique_id=1649346928]
+
+[node name="TreeTrigger" type="Area2D" parent="." unique_id=1858109236]
+position = Vector2(240, 21)
+
+[node name="Player" parent="." unique_id=48457569 instance=ExtResource("2_3n2ux")]
+position = Vector2(189, 129)
+
+[node name="Nova" parent="." unique_id=1681178056 instance=ExtResource("3_efkwo")]
+position = Vector2(377, 215)
+
+[node name="NovaPath" type="Node2D" parent="." unique_id=627493708]
+
+[node name="NovaPath1" type="Marker2D" parent="NovaPath" unique_id=941948816]
+position = Vector2(336, 254)
+
+[node name="NovaPath2" type="Marker2D" parent="NovaPath" unique_id=180407698]
+position = Vector2(345, 206)
+
+[node name="NovaPath3" type="Marker2D" parent="NovaPath" unique_id=717978361]
+position = Vector2(354, 175)
+
+[node name="NovaGuide" type="Node" parent="." unique_id=2127229997]
+script = ExtResource("4_un0rv")

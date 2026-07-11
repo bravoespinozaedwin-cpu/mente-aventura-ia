@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://b3ufx0kyn5h5t" path="res://scenes/player/player.tscn" id="2_w5rxp"]
 [ext_resource type="Script" uid="uid://dl56c1rbdxmdj" path="res://scripts/interactables/Door.gd" id="4_44ldr"]
 [ext_resource type="Script" uid="uid://byv2t6w2bv1g7" path="res://scripts/interactables/Book.gd" id="4_umplw"]
-[ext_resource type="PackedScene" uid="uid://dj3eujiwn3jmx" path="res://scripts/nova/Nova.tscn" id="5_4c5ob"]
 [ext_resource type="PackedScene" uid="uid://btad6qdj2l32f" path="res://scripts/systems/IntroController.tscn" id="7_8h68f"]
 [ext_resource type="Script" uid="uid://3fqab58vytfp" path="res://scripts/systems/IntroController.gd" id="8_qwl3c"]
 
@@ -170,9 +169,6 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "texto de prueba
 "
-
-[node name="Nova" parent="." unique_id=1749388893 instance=ExtResource("5_4c5ob")]
-position = Vector2(714, 350)
 
 [node name="IntroController" parent="." unique_id=580645350 instance=ExtResource("7_8h68f")]
 position = Vector2(429, 282)
