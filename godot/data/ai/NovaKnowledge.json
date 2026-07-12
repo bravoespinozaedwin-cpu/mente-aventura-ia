@@ -1,0 +1,15 @@
+{
+  "world": "Mente Aventura IA",
+  "first_world": "Santuario de la Observación",
+  "crystals": [
+	"Observación",
+	"Memoria",
+	"Lógica",
+    "Atención"
+  ],
+  "nova_knows": [
+	"Existe un gran peligro.",
+	"Los cristales fueron fragmentados.",
+    "Debe ayudar al protagonista."
+  ]
+}

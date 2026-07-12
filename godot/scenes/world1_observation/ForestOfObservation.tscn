@@ -1,7 +1,82 @@
 [gd_scene format=3 uid="uid://dgn3vur66rvtn"]
 
+[ext_resource type="Script" uid="uid://c5h7ud470w4fc" path="res://scenes/world1_observation/forest_of_observation.gd" id="1_dkkpt"]
+[ext_resource type="Texture2D" uid="uid://2yh4q4tt1gku" path="res://assets/environments/world1/BG_SanctuaryOfObservation.png" id="1_rnrv0"]
+[ext_resource type="PackedScene" uid="uid://6ydgrs36cm5l" path="res://scenes/nova/Nova.tscn" id="2_7p18c"]
+[ext_resource type="PackedScene" uid="uid://b3ufx0kyn5h5t" path="res://scenes/player/player.tscn" id="3_dkkpt"]
+[ext_resource type="Script" uid="uid://chpriieffjf5m" path="res://scripts/world1/SanctuaryController.gd" id="4_3o8qf"]
+
 [node name="ForestOfObservation" type="Node2D" unique_id=163320095]
+script = ExtResource("1_dkkpt")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1424217518]
+position = Vector2(0, -38)
+scale = Vector2(2, 2)
+texture = ExtResource("1_rnrv0")
 
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1189699543]
+position = Vector2(-86, -1)
+
+[node name="NovaSpawn" type="Marker2D" parent="." unique_id=1266537778]
+position = Vector2(55, 23)
+
+[node name="Nova" parent="." unique_id=433042350 instance=ExtResource("2_7p18c")]
+position = Vector2(55, 23)
+follow_player = true
+
+[node name="WorldCollision" type="Node2D" parent="." unique_id=1570508199]
+
+[node name="SanctuaryController" type="Node" parent="." unique_id=1538636431]
+script = ExtResource("4_3o8qf")
+
+[node name="DialogueUI" type="CanvasLayer" parent="." unique_id=1406135232]
+
+[node name="PanelContainer" type="PanelContainer" parent="DialogueUI" unique_id=2080088872]
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -170.0
+offset_right = -40.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="DialogueLabel" type="Label" parent="DialogueUI/PanelContainer" unique_id=2093902846]
+custom_minimum_size = Vector2(900, 120)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 30
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="DialogueChoices" type="CanvasLayer" parent="." unique_id=377179099]
+
+[node name="PanelContainer" type="PanelContainer" parent="DialogueChoices" unique_id=585851584]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogueChoices/PanelContainer" unique_id=1995521682]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="DialogueChoices/PanelContainer/VBoxContainer" unique_id=1552949551]
+layout_mode = 2
+
+[node name="ButtonReady" type="Button" parent="DialogueChoices/PanelContainer/VBoxContainer/Label" unique_id=1605135858]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="ButtonFear}" type="Button" parent="DialogueChoices/PanelContainer/VBoxContainer/Label" unique_id=562062975]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="ButtonQuestion" type="Button" parent="DialogueChoices/PanelContainer/VBoxContainer/Label" unique_id=1409103410]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Player" parent="." unique_id=48457569 instance=ExtResource("3_dkkpt")]
+position = Vector2(-86, -1)

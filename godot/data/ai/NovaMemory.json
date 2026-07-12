@@ -1,0 +1,10 @@
+{
+  "friendship": 0,
+  "trust": 0,
+  "fear": 0,
+  "happiness": 0,
+  "sadness": 0,
+  "player_name": "",
+  "last_topics": [],
+  "events": []
+}
