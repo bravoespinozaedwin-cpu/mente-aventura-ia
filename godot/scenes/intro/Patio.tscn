@@ -2,40 +2,196 @@
 
 [ext_resource type="Script" uid="uid://c8hd41gfsfujx" path="res://scenes/intro/Patio.gd" id="1_f86s0"]
 [ext_resource type="PackedScene" uid="uid://b3ufx0kyn5h5t" path="res://scenes/player/player.tscn" id="2_3n2ux"]
+[ext_resource type="Texture2D" uid="uid://birsr0und4od6" path="res://assets/Patio/ChatGPT Image 11 jul 2026, 12_25_05 a.m..png" id="2_xrd1x"]
 [ext_resource type="PackedScene" uid="uid://6ydgrs36cm5l" path="res://scenes/nova/Nova.tscn" id="3_efkwo"]
+[ext_resource type="Script" uid="uid://crbs6dj560g7p" path="res://scripts/interactables/TreeTrigger.gd" id="3_g5d02"]
 [ext_resource type="Script" uid="uid://b6gn0s0m0loy4" path="res://scripts/nova/NovaGuide.gd" id="4_un0rv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrd1x"]
+size = Vector2(1936, 239.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5d02"]
+size = Vector2(428, 322.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xrd1x"]
+radius = 145.33066
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g5d02"]
+radius = 271.00183
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16jtn"]
+size = Vector2(1107, 105.8125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptcgb"]
+size = Vector2(918, 1809)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2et1n"]
+size = Vector2(71.375, 127.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ex7p"]
+size = Vector2(435, 1707)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2tgk"]
+radius = 181.0
+height = 362.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2tgk"]
+size = Vector2(189.375, 119)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kqyfs"]
+size = Vector2(58, 87)
 
 [node name="Patio" type="Node2D" unique_id=1186116232]
 script = ExtResource("1_f86s0")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1375924063]
+position = Vector2(123.25005, 13.499886)
+scale = Vector2(1.8251185, 1.6532528)
+texture = ExtResource("2_xrd1x")
 
 [node name="WorldCollision" type="Node2D" parent="." unique_id=1208852144]
 
+[node name="Casa" type="StaticBody2D" parent="WorldCollision" unique_id=535290062]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/Casa" unique_id=671476907]
+position = Vector2(141, -645)
+shape = SubResource("RectangleShape2D_xrd1x")
+
+[node name="Sembrio" type="StaticBody2D" parent="WorldCollision" unique_id=486956117]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/Sembrio" unique_id=888262437]
+position = Vector2(-269, 148.25)
+shape = SubResource("RectangleShape2D_g5d02")
+
+[node name="RightArbol" type="StaticBody2D" parent="WorldCollision" unique_id=644917374]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/RightArbol" unique_id=1521449005]
+position = Vector2(-126, 661)
+shape = SubResource("CircleShape2D_xrd1x")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="WorldCollision" unique_id=685134178]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/StaticBody2D3" unique_id=1187590608]
+position = Vector2(139, 591)
+shape = SubResource("CircleShape2D_g5d02")
+
+[node name="LeftArbol" type="StaticBody2D" parent="WorldCollision" unique_id=1321153153]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/LeftArbol" unique_id=449320265]
+position = Vector2(-284.5, 1192.9063)
+shape = SubResource("RectangleShape2D_16jtn")
+
+[node name="Arbol" type="StaticBody2D" parent="WorldCollision" unique_id=163605621]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/Arbol" unique_id=820382834]
+position = Vector2(652, 368.5)
+shape = SubResource("RectangleShape2D_ptcgb")
+
+[node name="arbol" type="StaticBody2D" parent="WorldCollision" unique_id=610914877]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/arbol" unique_id=1627902614]
+position = Vector2(49, 877)
+shape = SubResource("RectangleShape2D_2et1n")
+
+[node name="left" type="StaticBody2D" parent="WorldCollision" unique_id=611342527]
+position = Vector2(-265, 961)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/left" unique_id=1263261037]
+position = Vector2(-352.5, -639.5)
+shape = SubResource("RectangleShape2D_2ex7p")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WorldCollision" unique_id=1976075990]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/StaticBody2D" unique_id=1171995730]
+position = Vector2(-559, 542)
+shape = SubResource("CapsuleShape2D_g2tgk")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="WorldCollision" unique_id=1278928420]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/StaticBody2D2" unique_id=1682249486]
+position = Vector2(-269.625, 1100)
+shape = SubResource("RectangleShape2D_g2tgk")
+
+[node name="arbol2" type="StaticBody2D" parent="WorldCollision" unique_id=181188456]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/arbol2" unique_id=504183069]
+position = Vector2(-365, 871)
+shape = SubResource("RectangleShape2D_2et1n")
+
+[node name="arbol3" type="StaticBody2D" parent="WorldCollision" unique_id=2051594239]
+
+[node name="dd" type="CollisionShape2D" parent="WorldCollision/arbol3" unique_id=342788195]
+position = Vector2(24, 976)
+shape = SubResource("RectangleShape2D_2et1n")
+
+[node name="arbol4" type="StaticBody2D" parent="WorldCollision" unique_id=821851001]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/arbol4" unique_id=120005925]
+position = Vector2(-256, 814)
+shape = SubResource("RectangleShape2D_2et1n")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="WorldCollision" unique_id=970807000]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/StaticBody2D4" unique_id=730204202]
+position = Vector2(-316.6875, -468.5)
+shape = SubResource("RectangleShape2D_g2tgk")
+
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=621531604]
-position = Vector2(189, 129)
+position = Vector2(-378, 158)
 
 [node name="NovaSpawn" type="Marker2D" parent="." unique_id=1649346928]
+position = Vector2(-380, 152)
 
 [node name="TreeTrigger" type="Area2D" parent="." unique_id=1858109236]
-position = Vector2(240, 21)
+position = Vector2(-51, 1072)
+script = ExtResource("3_g5d02")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrigger" unique_id=1855381802]
+position = Vector2(147, 6)
+shape = SubResource("RectangleShape2D_kqyfs")
 
 [node name="Player" parent="." unique_id=48457569 instance=ExtResource("2_3n2ux")]
-position = Vector2(189, 129)
+position = Vector2(-1, -558)
 
 [node name="Nova" parent="." unique_id=1681178056 instance=ExtResource("3_efkwo")]
-position = Vector2(377, 215)
+position = Vector2(-170, -207)
 
 [node name="NovaPath" type="Node2D" parent="." unique_id=627493708]
+position = Vector2(-290, 212)
 
 [node name="NovaPath1" type="Marker2D" parent="NovaPath" unique_id=941948816]
-position = Vector2(336, 254)
+position = Vector2(132, 91)
 
 [node name="NovaPath2" type="Marker2D" parent="NovaPath" unique_id=180407698]
-position = Vector2(345, 206)
+position = Vector2(-47, 494)
 
 [node name="NovaPath3" type="Marker2D" parent="NovaPath" unique_id=717978361]
-position = Vector2(354, 175)
+position = Vector2(352, 863)
+gizmo_extents = 0.0
 
 [node name="NovaGuide" type="Node" parent="." unique_id=2127229997]
 script = ExtResource("4_un0rv")
+
+[node name="DialogueUI" type="CanvasLayer" parent="." unique_id=2132944265]
+
+[node name="PanelContainer" type="PanelContainer" parent="DialogueUI" unique_id=692218940]
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -170.0
+offset_right = -40.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="DialogueLabel" type="Label" parent="DialogueUI/PanelContainer" unique_id=1339665888]
+custom_minimum_size = Vector2(900, 120)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 30
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="body_entered" from="TreeTrigger" to="TreeTrigger" method="_on_body_entered"]

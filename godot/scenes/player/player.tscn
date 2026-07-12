@@ -114,3 +114,7 @@ shape = SubResource("RectangleShape2D_dovo2")
 z_index = 20
 sprite_frames = SubResource("SpriteFrames_c3xxp")
 animation = &"walk"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1455225068]
+zoom = Vector2(1.4, 1.4)
+position_smoothing_enabled = true

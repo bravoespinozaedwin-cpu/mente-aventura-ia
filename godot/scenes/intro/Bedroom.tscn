@@ -74,14 +74,20 @@ position = Vector2(650, 380)
 z_index = 10
 position = Vector2(547, 330)
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1864427387]
-position = Vector2(73, -9)
-position_smoothing_enabled = true
-
 [node name="InteractionArea" type="Area2D" parent="Player" unique_id=1612463042]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/InteractionArea" unique_id=265970413]
 shape = SubResource("CircleShape2D_w5rxp")
+
+[node name="Camera2D2" type="Camera2D" parent="Player" unique_id=1864427387]
+position = Vector2(73, -9)
+zoom = Vector2(20, 20)
+limit_left = -1000
+limit_top = -1000000
+limit_right = 100
+limit_bottom = 1000000
+limit_smoothed = true
+position_smoothing_enabled = true
 
 [node name="WorldCollision" type="Node2D" parent="." unique_id=2044475128]
 
@@ -163,12 +169,25 @@ shape = SubResource("RectangleShape2D_qwl3c")
 
 [node name="DialogueUI" type="CanvasLayer" parent="." unique_id=288531219]
 
-[node name="DialogueLabel" type="Label" parent="DialogueUI" unique_id=47369727]
-visible = false
-offset_right = 40.0
-offset_bottom = 23.0
-text = "texto de prueba
-"
+[node name="PanelContainer" type="PanelContainer" parent="DialogueUI" unique_id=404675123]
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -170.0
+offset_right = -40.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="DialogueLabel" type="Label" parent="DialogueUI/PanelContainer" unique_id=147086888]
+custom_minimum_size = Vector2(900, 120)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 30
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="IntroController" parent="." unique_id=580645350 instance=ExtResource("7_8h68f")]
 position = Vector2(429, 282)
